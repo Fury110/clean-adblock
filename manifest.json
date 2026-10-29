@@ -1,0 +1,73 @@
+{
+  "manifest_version": 3,
+  "name": "CleanBlock - Zero-Bloat Ad Blocker",
+  "version": "1.0.0",
+  "description": "Zero bloat, zero telemetry, zero corporate whitelists. Real ad blocking with YouTube protection.",
+  "icons": {
+    "16": "icons/adblock-16.png",
+    "32": "icons/adblock-32.png",
+    "48": "icons/adblock-48.png",
+    "128": "icons/adblock-128.png"
+  },
+  "permissions": [
+    "declarativeNetRequest",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "easylist",
+        "enabled": true,
+        "path": "rules/easylist.json"
+      },
+      {
+        "id": "easyprivacy",
+        "enabled": true,
+        "path": "rules/easyprivacy.json"
+      },
+      {
+        "id": "trackers",
+        "enabled": true,
+        "path": "rules/trackers.json"
+      }
+    ]
+  },
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content/yt-main-world.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": true
+    },
+    {
+      "matches": ["<all_urls>"],
+      "css": ["content/cosmetic.css"],
+      "js": ["content/cosmetic.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    },
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content/youtube-defuser.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "CleanBlock",
+    "default_icon": {
+      "16": "icons/adblock-16.png",
+      "32": "icons/adblock-32.png",
+      "48": "icons/adblock-48.png",
+      "128": "icons/adblock-128.png"
+    }
+  }
+}

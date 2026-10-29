@@ -1,0 +1,94 @@
+/* CleanBlock Cosmetic Filtering - High performance zero-flicker ad hiding */
+
+/* Standard Web Ad Units & Containers */
+.adsbygoogle,
+[id^="google_ads_"],
+[id^="div-gpt-ad"],
+[id*="ScriptRoot"],
+.taboola-placeholder,
+.trc_related_container,
+.outbrain,
+.OUTBRAIN,
+[data-ad-slot],
+[data-ad-unit],
+[data-ad-client],
+[data-google-query-id],
+.ad-slot,
+.ad-container,
+.ad-wrapper,
+.ad-banner,
+.advertisement,
+.advert-box,
+.adunit,
+.adsbox,
+.sponsored-post,
+.sponsored-content,
+.native-ad,
+iframe[src*="doubleclick.net"],
+iframe[src*="googlesyndication.com"],
+iframe[src*="adservice.google"],
+iframe[src*="adnxs.com"],
+iframe[src*="amazon-adsystem.com"],
+iframe[src*="criteo.net"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  width: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* AdBlock Test Sites (turtlecute / d3ward test elements) */
+#cts_test,
+.textads,
+.banner_ads,
+.adbox,
+.ADBox,
+.AdBox,
+.adbox-wrapper,
+.adSocial,
+/* ShockVPN and affiliate test sponsor banners */
+[aria-label*="ShockVPN"],
+[data-umami-event*="ShockVPN"],
+button[role="link"][aria-label*="ShockVPN"],
+.i_box,
+.includeWrapper:has(img[src*="banner"]),
+.include:has(img[src*="banner"]),
+.include > img[src*="banner"],
+.include > div[data-ads] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  width: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* YouTube Video Ad Containers & Overlays */
+.video-ads,
+.ytp-ad-module,
+.ytp-ad-player-overlay,
+.ytp-ad-player-overlay-layout,
+.ytp-ad-overlay-container,
+.ytp-ad-message-container,
+.ytp-ad-text,
+.ytp-ad-action-interstitial,
+.ytlr-ad-skip-or-preview,
+.ytlr-watch-default__ad-badge-for-tvae,
+ytd-action-companion-ad-renderer,
+ytd-display-ad-renderer,
+ytd-video-masthead-ad-v3-renderer,
+ytd-promoted-sparkles-web-renderer,
+ytd-statement-banner-renderer,
+ytd-in-feed-ad-layout-renderer,
+ytd-banner-promo-renderer,
+ytd-ad-slot-renderer,
+#masthead-ad,
+#player-ads,
+tp-yt-paper-dialog:has(#dismiss-button:has-text("Ad blockers")) {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+}
